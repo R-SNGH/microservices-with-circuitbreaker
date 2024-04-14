@@ -39,8 +39,9 @@ public class VaccinationCenterController {
         // by connecting to CitizenDB
         // RestTemplate is used to connect from one service to another service
         // connecting to CitizenController getCitizensByVaccinationCenterId logic
-        List<Citizen> listOfCitizens = restTemplate.getForObject("http://localhost:8081/citizen/all/"+id, List.class);
-        //List<Citizen> listOfCitizens = restTemplate.getForObject("http://CITIZEN-SERVICE/citizen/all/"+id, List.class);
+        //List<Citizen> listOfCitizens = restTemplate.getForObject("http://localhost:8081/citizen/all/"+id, List.class);
+        //asking eureka server to locate CITIZEN-SERVICE
+        List<Citizen> listOfCitizens = restTemplate.getForObject("http://CITIZEN-SERVICE/citizen/all/"+id, List.class);
         requiredResponse.setCitizens(listOfCitizens);
         return new ResponseEntity<RequiredResponse>(requiredResponse, HttpStatus.OK);
     }
