@@ -4,7 +4,7 @@ import com.example.vaccinationcenter.entities.VaccinationCenter;
 import com.example.vaccinationcenter.model.Citizen;
 import com.example.vaccinationcenter.model.RequiredResponse;
 import com.example.vaccinationcenter.repositories.VaccinationCenterRepository;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+//import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,7 +30,7 @@ public class VaccinationCenterController {
     }
 
     @GetMapping("/id/{id}")
-    @HystrixCommand(fallbackMethod = "handleCitizenDownTime")
+//    @HystrixCommand(fallbackMethod = "handleCitizenDownTime")
     public ResponseEntity<RequiredResponse> getAllDataBasedOnCenterId(@PathVariable Integer id){
         RequiredResponse requiredResponse =  new RequiredResponse();
         //1st fetching vaccination center details
@@ -48,10 +48,10 @@ public class VaccinationCenterController {
         return new ResponseEntity<RequiredResponse>(requiredResponse, HttpStatus.OK);
     }
 
-    public ResponseEntity<RequiredResponse> handleCitizenDownTime(@PathVariable Integer id){
-        RequiredResponse requiredResponse =  new RequiredResponse();
-        VaccinationCenter center  = repository.findById(id).get();
-        requiredResponse.setCenter(center);
-        return new ResponseEntity<RequiredResponse>(requiredResponse, HttpStatus.OK);
-    }
+//    public ResponseEntity<RequiredResponse> handleCitizenDownTime(@PathVariable Integer id){
+//        RequiredResponse requiredResponse =  new RequiredResponse();
+//        VaccinationCenter center  = repository.findById(id).get();
+//        requiredResponse.setCenter(center);
+//        return new ResponseEntity<RequiredResponse>(requiredResponse, HttpStatus.OK);
+//    }
 }
