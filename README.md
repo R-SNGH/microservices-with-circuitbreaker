@@ -4,3 +4,4 @@
 ![image](https://github.com/R-SNGH/microservices-circuitbreaker-demo/assets/117880135/f801dbe1-6048-48aa-86f8-3bc19f4dcafe)
 ![image](https://github.com/R-SNGH/microservices-circuitbreaker-demo/assets/117880135/22893af7-4b0c-470a-aa0a-eb25e8bfb2aa)
 
+![image](https://github.com/R-SNGH/microservices-circuitbreaker-demo/assets/117880135/7715ecd7-52a2-45a4-90d2-d0de52b540ce)
