@@ -31,6 +31,10 @@ public class VaccinationCenterController {
 
     @GetMapping("/id/{id}")
 //    @HystrixCommand(fallbackMethod = "handleCitizenDownTime")
+    //when using Resiliance4J we can use Retry, RateLimiting + a circuitBreaker; requies specific config details in application.yml: 
+    //@CircuitBreaker(name="supplyaname", fallbackMethod = "handleCitizenDownTime")
+    //@Retry(name="supplyretryname", fallbackMethod = "handleCitizenDownTime")
+    //@RateLimiter(name="supplyratelimitername", fallbackMethod = "handleCitizenDownTime")
     public ResponseEntity<RequiredResponse> getAllDataBasedOnCenterId(@PathVariable Integer id){
         RequiredResponse requiredResponse =  new RequiredResponse();
         //1st fetching vaccination center details
