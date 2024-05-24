@@ -43,6 +43,7 @@ public class VaccinationCenterController {
         // connecting to CitizenController getCitizensByVaccinationCenterId logic
         //List<Citizen> listOfCitizens = restTemplate.getForObject("http://localhost:8081/citizen/all/"+id, List.class);
         //asking eureka server to locate CITIZEN-SERVICE
+        //add a loadbalanced RestTemplate bean . Its not available with auto configutations in SB 
         List<Citizen> listOfCitizens = restTemplate.getForObject("http://CITIZEN-SERVICE/citizen/all/"+id, List.class);
         requiredResponse.setCitizens(listOfCitizens);
         return new ResponseEntity<RequiredResponse>(requiredResponse, HttpStatus.OK);
