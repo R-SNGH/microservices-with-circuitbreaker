@@ -1,7 +1,8 @@
 server:
   port: 8761
-
+# This is a standalone eureka server that will not be becoming a client to any other Eureka server
+# To configure a Eureka server when there are other Eureka Servers on the network:
 eureka:
   client:
-    fetch-registry: false
+    fetch-registry: false # I do not want to fetch any registry from any other eureka server on the network.
     register-with-eureka: false
